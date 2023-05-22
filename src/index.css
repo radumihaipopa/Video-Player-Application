@@ -1,13 +1,99 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+}
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: black;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.hls-video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.shaka-video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.controls-container {
+    position: absolute;
+    bottom: 0;
+    width: 98%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.progress-bar {
+    flex-grow: 1;
+    height: 10px;
+    margin: 0 50px;
+    background-color: #777;
+    cursor: pointer;
+}
+
+.progress {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    position: relative;
+}
+
+.inner-progress {
+    height: 100%;
+    background-color: #00b3ca;
+    width: 0;
+    border-radius: 5px; /* Rounded shape */
+    transition: width 0.2s ease;
+}
+
+.scrubber {
+    position: absolute;
+    top: -8px; /* Adjust position to center vertically */
+    width: 25px;
+    height: 25px;
+    background-color: #00b3ca;
+    border-radius: 50%; /* Circular shape */
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.scrubber:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #00b3ca; /* Pale color for focus state */
+}
+
+.skip-buttons {
+    display: flex;
+    margin-left: 45vw;
+
+}
+
+.skip-button {
+    margin-left: 20px;
+    padding: 20px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.skip-button i {
+    font-size: 24px;
+    transition: color 0.2s ease;
+}
+
+.skip-button:hover {
+    outline: none;
+}
+
+.skip-button:hover i {
+    color: #00b3ca; /* Pale color for focus state */
 }
